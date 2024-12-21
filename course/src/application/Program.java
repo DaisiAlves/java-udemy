@@ -22,7 +22,21 @@ public class Program {
 
         
 
-        System.out.println(product);
+        System.out.println("Product data:" + product);
+
+        System.out.println();
+        System.out.println("Enter the number of products to be added in stock: ");
+        int quantity = sc.nextInt();
+        product.addProducts(quantity);//isso faz a atualização da quantidade dentro do objeto product
+
+        System.out.println("Update data:" + product);
+
+        System.out.println();
+        System.out.println("Enter the number of products to be removed from stock: ");
+        quantity = sc.nextInt();
+        product.removeProducts(quantity);
+
+        System.out.println("Update data:" + product);
 
         sc.close();
     }
