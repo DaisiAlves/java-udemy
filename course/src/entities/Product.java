@@ -2,9 +2,9 @@ package entities;
 
 public class Product {
 
-    public String name;
-    public double price;
-    public int quantity; 
+    private String name;
+    private double price;
+    private int quantity; 
 
     public Product() {
         // construtor padrão, por hábito é bom utilizar para que nao dê nenhum problema na instanciação.
@@ -19,6 +19,18 @@ public class Product {
     public Product(String name, double price) { // Sobrecarga: Posso usar o mesmo contrutor com parâmetros diferentes
         this.name = name;
         this.price = price;
+    }
+
+    public String getName() { //Encapsulamento: No encapsulamento nós mudamos as variáveis para privado, para evitar que sejam feitas alterações indevidas. Então para que eu consiga acessar a váriavel e retorna-la eu preciso usar o get. E para que eu consiga alterar a variável eu preciso usar o set. 
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getQuantity(){ // Como a quantidade só pode ser alterada através da regra de negócio que é a retirada ou inserção de produto no estoque, entao eu nao vou deixar o acesso livre pelo set para alteração. Somente o get para retornar a quantidade. 
+        return quantity;
     }
 
     public double totalValueInStock() {
