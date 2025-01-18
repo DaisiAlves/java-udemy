@@ -14,7 +14,7 @@ public class Ex02Vet {
         int n = sc.nextInt();
         ProductEx2 [] vect = new ProductEx2 [n]; // por pdrão o vetor de um objeto está nulo, entao temos que instanciar um produto, porque casa quadradinho do vetor é só uma referência
 
-        for (int i =0; i<n; i++) {
+        for (int i =0; i<vect.length; i++) { // nesse caso a variável n pode ser substituída por vect.length, que significa a quantidade de vetores, fica de forma mais coesa.
             sc.nextLine();
             String name = sc.nextLine();
             double price = sc.nextDouble();
@@ -22,12 +22,12 @@ public class Ex02Vet {
         }
 
         double sum = 0.0;
-        for (int i = 0; i<n; i++) {
+        for (int i = 0; i<vect.length; i++) {
             sum += vect[i].getPrice();
 
         }
 
-        double avg = sum/n;
+        double avg = sum/vect.length;
 
         System.out.printf("Media dos preços = %.2f%n", avg);
 
