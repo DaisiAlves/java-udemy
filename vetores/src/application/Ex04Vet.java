@@ -3,6 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
+//Soma Vetor
 public class Ex04Vet {
     
     public static void main(String[] args) {

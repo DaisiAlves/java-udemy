@@ -3,6 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
+//Negativos
 public class Ex03Vet {
     
     public static void main(String[] args) {
