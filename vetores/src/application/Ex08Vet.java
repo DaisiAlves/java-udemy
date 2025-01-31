@@ -34,5 +34,6 @@ public class Ex08Vet {
             System.out.println(vectC[i]);
         }
 
+        sc.close();
     }
 }

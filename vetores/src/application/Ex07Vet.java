@@ -31,7 +31,7 @@ public class Ex07Vet {
         System.out.print("Posição do maior: " + position);
 
 
-
+        sc.close();
 
     }
 }
