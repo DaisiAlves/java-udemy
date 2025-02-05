@@ -1,6 +1,7 @@
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class Program {
@@ -36,6 +37,19 @@ public class Program {
         System.out.println(d09);
         System.out.println(d10);
         System.out.println(d11);
+
+
+        // TRANSFORMAR FATA PARA TEXTO: 
+
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter fmt4 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault()); //Essa instanciação irá buscar a data do computador, e converter do horário de Londres
+
+        System.out.println("d04 = " + d04.format(fmt3));
+        System.out.println("d04 = " + fmt3.format(d04));
+        System.out.println("d04 = " + d04.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        System.out.println("d06 = " + fmt4.format(d06));
+
+        //O Instant não funciona com o format, por ser global, para conseguir fazer isso tem que informar para qual horario eu quero 
     }
 
 }
