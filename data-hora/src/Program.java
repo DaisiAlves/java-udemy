@@ -54,9 +54,22 @@ public class Program {
 
         ZoneId.getAvailableZoneIds(); // classe que retorna uma coleção com os nomes dos fuso horários customizados 
 
-        for (String s : ZoneId.getAvailableZoneIds()){
-            System.out.println(s);
-        }
+       
+
+        LocalDate r1 = LocalDate.ofInstant(d06, ZoneId.systemDefault());
+        LocalDate r2 = LocalDate.ofInstant(d06, ZoneId.of("Portugal"));
+        LocalDateTime r3 = LocalDateTime.ofInstant(d06, ZoneId.systemDefault());
+        LocalDateTime r4 = LocalDateTime.ofInstant(d06, ZoneId.of("Portugal"));
+
+        System.out.println("r1 = " + r1);
+        System.out.println("r2 = " + r2);
+        System.out.println("r3 = " + r3);
+        System.out.println("r4 = " + r4);
+
+
+        System.out.println("d04 dia = " + d04.getDayOfMonth());
+        System.out.println("d04 mês = " + d04.getMonthValue());
+        System.out.println("d04 mês = " + d04.getYear());
     }
 
 }
