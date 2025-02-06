@@ -47,9 +47,16 @@ public class Program {
         System.out.println("d04 = " + d04.format(fmt3));
         System.out.println("d04 = " + fmt3.format(d04));
         System.out.println("d04 = " + d04.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-        System.out.println("d06 = " + fmt4.format(d06));
+        System.out.println("d06 = " + d06.toString());
 
         //O Instant não funciona com o format, por ser global, para conseguir fazer isso tem que informar para qual horario eu quero 
+
+
+        ZoneId.getAvailableZoneIds(); // classe que retorna uma coleção com os nomes dos fuso horários customizados 
+
+        for (String s : ZoneId.getAvailableZoneIds()){
+            System.out.println(s);
+        }
     }
 
 }
