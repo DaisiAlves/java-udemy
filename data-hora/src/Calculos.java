@@ -25,7 +25,11 @@ public class Calculos {
         System.out.println("nextWeekInstant = " + nextWeekInstant);
 
         Duration t1 = Duration.between(pastWeekLocalDate, d05);
+        Duration t2 = Duration.between(pastWeekInstant, d06);
 
         System.out.println("Duração entre um e outro: " + t1.toDays());
+        System.out.println("Duração do t3 em dia: " + t2.toDays());
+       
+
     }
 }
