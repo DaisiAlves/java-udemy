@@ -43,6 +43,7 @@ public class Program {
 
         DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter fmt4 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault()); //Essa instanciação irá buscar a data do computador, e converter do horário de Londres
+        DateTimeFormatter fmt5 = DateTimeFormatter.ISO_INSTANT;
 
         System.out.println("d04 = " + d04.format(fmt3));
         System.out.println("d04 = " + fmt3.format(d04));
@@ -71,5 +72,5 @@ public class Program {
         System.out.println("d04 mês = " + d04.getMonthValue());
         System.out.println("d04 mês = " + d04.getYear());
     }
-
+    
 }
