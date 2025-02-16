@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import entities.Department;
 import entities.Worker;
+import enums.WorkerLevel;
+
 
 public class Program {
     public static void main(String[] args) {
@@ -22,7 +24,6 @@ public class Program {
       String workerLevel = sc.nextLine();
       System.out.println("Base salary: ");
       double baseSalary = sc.nextDouble();
-      Worker worker = new Worker (workerName, WorkerLevel.valueOf(workerLevel), baseSalary, new Department(departmentName));
-
+      Worker worker = new Worker(workerName, WorkerLevel.valueOf(workerLevel), baseSalary, new Department(departmentName) );
     }
 }
