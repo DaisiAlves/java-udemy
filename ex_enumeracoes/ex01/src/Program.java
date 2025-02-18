@@ -19,7 +19,7 @@ public class Program {
 
       Locale.setDefault(Locale.US);  
       Scanner sc = new Scanner (System.in);
-      SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+      DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
       System.out.println("Enter department's name: ");
       String departmentName = sc.nextLine();
@@ -39,8 +39,7 @@ public class Program {
       for (int i =1; i<=n; i++){
         System.out.println("Enter contract #" + i + "data: ");
         System.out.print("Date (DD/MM/YYYY): ");
-        String data1 = sc.next();
-        LocalDate contractDate = LocalDate.parse(data1, DateTimeFormatter.ofPattern("dd/MM/yyyy")); 
+        LocalDate contractDate = LocalDate.parse(sc.next(),fmt); 
         System.out.print("Value per hour: ");
         double valuePerHour = sc.nextDouble();
         System.out.print("Duration (hours): ");
