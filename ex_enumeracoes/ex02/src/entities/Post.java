@@ -50,7 +50,7 @@ public class Post {
         return comments;
     }
 
-    // Não esquecer que não podemos ter o método set na lista, pois isso permitira substituir a lista 
+    // Não esquecer que não podemos ter o método set na lista, pois isso permitira substituir a lista, fazendo somente o metodo add e remove
 
     public void addComment(Comment comment) {
         comments.add(comment);
