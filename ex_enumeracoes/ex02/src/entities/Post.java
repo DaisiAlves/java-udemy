@@ -9,17 +9,20 @@ public class Post {
     private LocalDate moment; 
     private String title;
     private String content;
+    private Integer likes;
 
+    
     private List<Comment> comments = new ArrayList <>();
 
     public Post () {
 
     }
 
-    public Post(LocalDate moment, String title, String content) {
+    public Post(LocalDate moment, String title, String content, Integer likes) {
         this.moment = moment;
         this.title = title;
         this.content = content;
+        this.likes= likes;
     }
 
     public LocalDate getMoment() {
@@ -46,6 +49,15 @@ public class Post {
         this.content = content;
     }
 
+    public Integer getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
+
     public List<Comment> getComments() {
         return comments;
     }
@@ -58,7 +70,15 @@ public class Post {
 
     public void removeComment(Comment comment) {
         comments.remove(comment);
-    }//Remover comentário
+    }
+
+   
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(title + "\n");//append significa acrescentar no final 
+        sb.append(likes);
+        sb.append("Likes = ");
+    }
 
     
 }
