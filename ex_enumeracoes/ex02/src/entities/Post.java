@@ -81,6 +81,10 @@ public class Post {
         sb.append(title + "\n");//append significa acrescentar no final 
         sb.append(likes);
         sb.append("Likes = ");
+        sb.append(dtf.format(moment)+ "\n");
+        sb.append(content + "\n");
+        sb.append("Comments:\n");
+        
             
     }
 
