@@ -1,10 +1,13 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Post {
+
+    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern ("dd/MM/yyyy HH:mm:ss");
 
     private LocalDate moment; 
     private String title;
@@ -78,6 +81,7 @@ public class Post {
         sb.append(title + "\n");//append significa acrescentar no final 
         sb.append(likes);
         sb.append("Likes = ");
+            
     }
 
     
