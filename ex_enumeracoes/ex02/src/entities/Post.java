@@ -84,8 +84,10 @@ public class Post {
         sb.append(dtf.format(moment)+ "\n");
         sb.append(content + "\n");
         sb.append("Comments:\n");
-        
-            
+        for (Comment c : comments) {
+            sb.append(c.getText());
+        }
+        return sb.toString();
     }
 
     
