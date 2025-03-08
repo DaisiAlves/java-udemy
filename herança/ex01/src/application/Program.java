@@ -24,7 +24,22 @@ public class Program {
     BusinessAccount acc4 = (BusinessAccount) acc2; //Não posso converter de account para BusinessAccount, preciso avisar o compilador que vou converter de Account para Businnes acount, fazer um casting manual colocando entre parenteses o tipo da subclasse
     acc4.loan(100.00); //operação de empréstimo que está na Businnes Account
     
-    BusinessAccount acc5 = (BusinessAccount) acc3; //A acc3 foi instanciada por uma SavingsAccount, então ela não é BusinessAccount, então quando executarmos o compilador vai identificar um erro
+    //BusinessAccount acc5 = (BusinessAccount) acc3;
+    
+    //A acc3 foi instanciada por uma SavingsAccount, então ela não é BusinessAccount, então quando executarmos o compilador vai identificar um erro
+    //Para evitar esse tipo de erro temos que testar primeiro se o objeto é do tipo BusinessAccount, para isso usamos o instanceof:
+
+    if(acc3 instanceof BusinessAccount) {
+        BusinessAccount acc5 = (BusinessAccount) acc3;
+        acc5.loan(200.00);
+        System.out.println("Loan!");
+    }
+
+    if(acc3 instanceof SavingsAccount) {
+        SavingsAccount acc5 = (SavingsAccount)acc3;
+        acc5.updateBalance();
+        System.out.println("Update!");
+    }
 
 
     }
