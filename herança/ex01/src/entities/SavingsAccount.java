@@ -24,4 +24,10 @@ public class SavingsAccount extends Account {
         balance += balance * interestRate;
     }
 
+    //SOBRESCREVENDO O METODO DA CLASSE ACCOUNT PARA QUE NAO SEJA DESCONTADO 5 REAIS CASO O SAQUE SEJA DA CONTA POUPANÇA 
+
+    @Override //INDICA QUE É UMA SOPREPOSIÇÃO DE MÉTODO, assim caso você erre em alguma informação do método o compilador vai identificar após procurar o método da superclasse e ver que está errado.
+    public void withdraw(double amount) {
+        balance -= amount;
+    }
 }

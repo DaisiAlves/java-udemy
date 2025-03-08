@@ -27,4 +27,11 @@ public class BusinessAccount extends Account {
         }
     }
 
+    //usando o mesmo método de Account, porem adicionando +2 de desconto. (palavrinha super)
+    @Override
+    public void withdraw(double amount) {
+        super.withdraw(amount);
+        balance -= 2.0;
+    }
+
 }
