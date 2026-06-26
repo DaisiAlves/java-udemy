@@ -19,7 +19,7 @@ public class Program {
     Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		List<TaxPayer> list = new ArrayList<>();
+		List<TaxPayer> list = new ArrayList<>(); // Essa lista é instanciada para que possa receber os objetos de pessoa fisica, ou pessoa juridica. A minha lista é do tipo generico TaxPayer, para poder aceitar os dois tipos. Upcasting: A variavel do tipo mais genético, aceita um objeto do tipo mais específico. 
 
 		int n = sc.nextInt();
 		
@@ -35,7 +35,7 @@ public class Program {
 			if (type == 'i') {
 				System.out.print("Health expenditures: ");
 				double healthExpenditures = sc.nextDouble();
-				list.add(new Individual(name, income, healthExpenditures));
+				list.add(new Individual(name, income, healthExpenditures)); //Aqui nós instanciamos o individio paraque ele seja adicionado na lista com todas as informaçoes que já coletamos. 
 			}
 			else {
 				System.out.print("Number of employees: ");
