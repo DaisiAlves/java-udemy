@@ -46,9 +46,17 @@ public class Reservation {
 
     }
 
-    public void updateDates(Date checkIn, Date checkOut) {
+    public String updateDates(Date checkIn, Date checkOut) {
+        Date now = new Date(); //Criamos uma nova data, que vai ser a data atual do sistema, para comparar com as datas de check-in e check-out.
+        if (checkIn.before(now) || checkOut.before(now)) { //Se a data de check-in ou a data de check-out for antes da data atual, então vamos imprimir uma mensagem de erro.
+            return "Reservation dates for update must be future dates";
+        } 
+        if (!checkOut.after(checkIn)) { //Se a data de check-out não for depois da data de check-in, então vamos imprimir uma mensagem de erro.
+           return "Check-out date must be after check-in date";
+        } 
         this.checkIn = checkIn;
         this.checkOut = checkOut;
+        return null; // Retorna null se a atualização for bem-sucedida, porque o meu metodo retorna sempre uma String.
     }
 
     @Override //O to String é um sobreposiçao, entao precisamos do Overrise.
