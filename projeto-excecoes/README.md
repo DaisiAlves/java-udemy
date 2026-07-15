@@ -1,4 +1,5 @@
 Tratamento de Exceções em Reservas
+
 ❌ Solução 1 (Muito Ruim)
 Lógica de validação no programa principal
 
