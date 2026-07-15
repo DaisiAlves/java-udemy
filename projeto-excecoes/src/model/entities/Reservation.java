@@ -40,23 +40,22 @@ public class Reservation {
     }
 
 
-    public long duration() { // A duraçao vai retornar um método longo, pois o que vamos usar para calcular a diferença entre as datas retorna um dado longo.
-        long diff = checkOut.getTime() - checkIn.getTime(); // O método getTime retorna a data em milisegundos, então vamos subtrair a data de checkOut com a data de checkIn. 
-        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS); // O método convert vai converter a diferença de milisegundos para dias. O timeUnit.DAYS é a unidade de tempo que queremos converter, e o TimeUnit.MILLISECONDS é a unidade de tempo que estamos convertendo.
+    public long duration() { 
+        long diff = checkOut.getTime() - checkIn.getTime(); 
+        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS); 
 
     }
 
-    public String updateDates(Date checkIn, Date checkOut) {
-        Date now = new Date(); //Criamos uma nova data, que vai ser a data atual do sistema, para comparar com as datas de check-in e check-out.
-        if (checkIn.before(now) || checkOut.before(now)) { //Se a data de check-in ou a data de check-out for antes da data atual, então vamos imprimir uma mensagem de erro.
-            return "Reservation dates for update must be future dates";
+    public void updateDates(Date checkIn, Date checkOut) {
+        Date now = new Date(); 
+        if (checkIn.before(now) || checkOut.before(now)) {
+            throw new IllegalArgumentException("Reservation dates for update must be future dates");
         } 
-        if (!checkOut.after(checkIn)) { //Se a data de check-out não for depois da data de check-in, então vamos imprimir uma mensagem de erro.
-           return "Check-out date must be after check-in date";
+        if (!checkOut.after(checkIn)) { 
+           throw new IllegalArgumentException("Check-out date must be after check-in date");
         } 
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        return null; // Retorna null se a atualização for bem-sucedida, porque o meu metodo retorna sempre uma String.
     }
 
     @Override //O to String é um sobreposiçao, entao precisamos do Overrise.
