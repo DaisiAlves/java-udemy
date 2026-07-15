@@ -1,18 +1,25 @@
-## Getting Started
+Tratamento de Exceções em Reservas
+❌ Solução 1 (Muito Ruim)
+Lógica de validação no programa principal
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Lógica de validação não delegada à reserva.
 
-## Folder Structure
+⚠️ Solução 2 (Ruim)
+Método retornando string
 
-The workspace contains two folders by default, where:
+A semântica da operação é prejudicada.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Retornar string não tem relação com a atualização de reserva.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Inviabiliza o cenário caso a operação realmente precisasse retornar uma string.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Não é possível tratar exceções em construtores.
 
-## Dependency Management
+Não há auxílio do compilador (o programador deve se "lembrar" de verificar se houve erro).
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+A lógica do código fica estruturada em condicionais aninhadas.
+
+Solução 3 (Boa)
+Tratamento de exceções
+
+Validação e tratamento de erros feitos de forma estruturada e elegante através de exceções.
