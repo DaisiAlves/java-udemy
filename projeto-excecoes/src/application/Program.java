@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 import model.entities.Reservation;
+import model.exceptions.DomainException;
 
 public class Program {
 
@@ -39,14 +40,16 @@ public class Program {
     catch (ParseException e) {
         System.out.println("Invalid date format");
     }
-    catch( IllegalArgumentException e) { //Essa exceçao já é pronta do JAVA, então não precisamos criar uma classe para ela. Ela é lançada quando o argumento passado para um método é inválido.
+    catch( DomainException e) { 
         System.out.println("Error in reservation: " + e.getMessage());
+    }
+    catch (RuntimeException e) { //RuntimeException é a classe mãe de todas as exceções que podem ser lançadas em tempo de execução, então podemos capturar qualquer exceção que seja lançada em tempo de execução.
+        System.out.println("Unexpected error");
     }
 
     sc.close();
 
     }
 
-  //SOLUÇAO BOA, COM EXCEÇAO PRONTA DO JAVA, MAS NAO É A MELHOR SOLUÇAO, POIS O USUARIO NAO CONSEGUE ENTENDER O ERRO. ENTÃO VAMOS CRIAR UMA EXCEÇAO PERSONALIZADA, PARA QUE O USUARIO CONSIGA ENTENDER O ERRO.
-    
+  //SOLUÇAO BOA com uma exceçao personalizada, que é a DomainException, que é uma exceçao que criamos para tratar os erros de negocio da nossa aplicaçao.
 }
